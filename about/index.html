@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — IntraSafe</title>
+  <meta name="description" content="A message from the founders of IntraSafe on why we built this platform and who it's for.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://intrasafe.app/about">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://intrasafe.app/about">
+  <meta property="og:title" content="About — IntraSafe">
+  <meta property="og:description" content="A message from the founders of IntraSafe on why we built this platform and who it's for.">
+  <meta property="og:site_name" content="IntraSafe">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0a;
+      --bg2: #111111;
+      --bg3: #161616;
+      --border: #222222;
+      --red: #dc2626;
+      --red-hover: #b91c1c;
+      --red-dim: rgba(220,38,38,0.12);
+      --text: #ffffff;
+      --text-muted: #a1a1aa;
+      --text-dim: #71717a;
+      --radius: 10px;
+      --max: 1100px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Nav ─────────────────────────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-logo-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--red);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(0.85); }
+    }
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
+    .btn-ghost {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: var(--radius);
+      transition: color 0.15s, background 0.15s;
+    }
+    .btn-ghost:hover { color: var(--text); background: rgba(255,255,255,0.06); }
+    .btn-ghost.active { color: var(--text); }
+    .btn-primary {
+      font-size: 0.875rem;
+      font-weight: 600;
+      background: var(--red);
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: var(--radius);
+      transition: background 0.15s, transform 0.1s;
+    }
+    .btn-primary:hover { background: var(--red-hover); transform: translateY(-1px); }
+
+    /* ── Page ────────────────────────────────────────────────────────────── */
+    .page-hero {
+      padding: 80px 24px 64px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(220,38,38,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--red);
+      margin-bottom: 20px;
+    }
+    .page-title {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .page-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ── Letter ──────────────────────────────────────────────────────────── */
+    .letter-wrap {
+      padding: 80px 24px;
+    }
+    .letter {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .letter p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.85;
+      margin-bottom: 1.6em;
+    }
+    .letter p:last-of-type {
+      margin-bottom: 0;
+    }
+    .letter p strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+    .letter p em {
+      color: var(--text);
+      font-style: italic;
+    }
+    .letter-sig {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--text-dim);
+      font-style: italic;
+    }
+    .letter-sig strong {
+      color: var(--text-muted);
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    /* ── CTA strip ───────────────────────────────────────────────────────── */
+    .cta-strip {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 64px 24px;
+      text-align: center;
+    }
+    .cta-strip h2 {
+      font-size: clamp(1.4rem, 3.5vw, 2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 32px;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-hero-primary {
+      font-size: 1rem;
+      font-weight: 700;
+      background: var(--red);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+    }
+    .btn-hero-primary:hover {
+      background: var(--red-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(220,38,38,0.3);
+    }
+    .btn-hero-secondary {
+      font-size: 1rem;
+      font-weight: 600;
+      background: transparent;
+      color: var(--text-muted);
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      transition: color 0.15s, border-color 0.15s, background 0.15s;
+    }
+    .btn-hero-secondary:hover {
+      color: var(--text);
+      border-color: #444;
+      background: rgba(255,255,255,0.04);
+    }
+
+    /* ── Footer ──────────────────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 48px 24px;
+    }
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      text-align: center;
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .footer-links a {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: var(--text-muted); }
+    .footer-copy { font-size: 0.8rem; color: var(--text-dim); }
+    .footer-disclaimer {
+      font-size: 0.75rem;
+      color: #444;
+      max-width: 560px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      .page-hero { padding: 60px 20px 48px; }
+      .letter-wrap { padding: 56px 20px; }
+      nav { padding: 0 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-dot"></span>
+        <strong>IntraSafe</strong>
+      </a>
+      <div class="nav-actions">
+        <a href="/about" class="btn-ghost active">About</a>
+        <a href="https://app.intrasafe.app/login" class="btn-ghost">Sign In</a>
+        <a href="https://app.intrasafe.app/signup" class="btn-primary">Get Started Free</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page hero -->
+  <div class="page-hero">
+    <p class="eyebrow">Our Story</p>
+    <h1 class="page-title">A Message from Our Founders</h1>
+    <p class="page-subtitle">Why we built IntraSafe, and the conviction that keeps us building it.</p>
+  </div>
+
+  <!-- Letter -->
+  <div class="letter-wrap">
+    <div class="letter">
+
+      <p>For decades we've served as business leaders, community organizers, and volunteer church leaders. And for just as long, we've carried a quiet concern — have we truly prepared ourselves and the people around us to respond when something goes wrong?</p>
+
+      <p><em>Not the emergencies we plan for. The ones we don't.</em></p>
+
+      <p>Built not from a boardroom, but from years of standing in lobbies, parking lots, and sanctuaries — after the drills, after the close calls, after the long conversations about what we'd do if something actually happened. And always, underneath it all, the quiet but heavy weight of responsibility for the people in our care.</p>
+
+      <p><strong>IntraSafe is the tool we always wished we had.</strong></p>
+
+      <p>We've built and scaled businesses from zero to hundreds of millions — and we've learned that growth without intention creates complexity that crushes the people it was meant to serve. So we made a different choice. We kept the team small, the costs low, and the focus sharp. Not because we had to. Because we wanted to build something with a real and lasting impact.</p>
+
+      <p>We designed IntraSafe to be robust, reliable, and affordable — because the organizations that need it most are often the ones with the least resources. From a small community gathering to a large multi-site organization, no one should have to choose between safety and budget.</p>
+
+      <p>We won't pretend we have everything figured out. But we have the experience to know what matters, and the conviction to keep making it better.</p>
+
+      <p>If you find value here, share it. The more widely this is used, the safer our communities become.</p>
+
+      <div class="letter-sig">
+        <strong>— The IntraSafe Team</strong>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-strip">
+    <h2>Ready to get started?</h2>
+    <div class="cta-buttons">
+      <a href="https://app.intrasafe.app/signup" class="btn-hero-primary">Get Started Free</a>
+      <a href="/" class="btn-hero-secondary">Learn More →</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <span class="footer-copy">© 2026 IntraSafe</span>
+        <a href="/about">About</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+        <a href="mailto:hello@intrasafe.app">Contact</a>
+      </div>
+      <p class="footer-disclaimer">IntraSafe is a coordination tool — a supplement to, not a replacement for, emergency services. Always call 911 in a life-threatening emergency.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
