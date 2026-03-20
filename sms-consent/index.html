@@ -98,15 +98,17 @@
           <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>
         </div>
         <p class="consent-text">
-          I agree to receive SMS notifications for security alerts, shift reminders,
-          and team coordination messages. Reply STOP to opt out.
-          <a href="https://intrasafe.app/sms-consent">Message &amp; data rates may apply.</a>
+          By checking this box and submitting this form, I consent to receive text messages
+          from IntraSafe for security alerts, shift reminders, and team coordination
+          messages. Reply STOP to opt out. Reply HELP for help. Message &amp; data rates
+          may apply. Message frequency may vary.
         </p>
       </div>
       <p class="note">
-        The checkbox is unchecked by default. The form cannot be submitted until the user
-        checks this box. Consent and timestamp are stored per-user in our database for
-        TCPA compliance auditing.
+        The checkbox is unchecked by default and optional. Users can create an account
+        without opting into SMS. Only users who affirmatively check the box receive SMS
+        messages. Consent status and timestamp are stored per-user in our database for
+        compliance auditing.
       </p>
     </div>
     <p class="screenshot-label">Consent checkbox — account creation form (Join with Token)</p>
@@ -140,7 +142,7 @@
         </li>
         <li>
           <span class="label">Opt-in method</span>
-          <span class="value">Explicit checkbox at account creation (unchecked by default)</span>
+          <span class="value">Voluntary checkbox at account creation (unchecked by default, not required to create an account)</span>
         </li>
         <li>
           <span class="label">Opt-out</span>
@@ -166,21 +168,29 @@
         <p style="font-size:12px; color:#6b7280; margin-bottom:6px;">SECURITY ALERT</p>
         <p style="font-size:14px; color:#e5e7eb; line-height:1.6;">
           [IntraSafe] 🚨 ALERT: Suspicious activity reported at Gate B — Westfield Org.
-          Open the app to respond. Reply STOP to opt out.
+          Open the app to respond. Reply STOP to opt out, HELP for help.
         </p>
       </div>
       <div style="margin-bottom:14px; padding-bottom:14px; border-bottom:1px solid #1a1a2e;">
         <p style="font-size:12px; color:#6b7280; margin-bottom:6px;">SHIFT REMINDER</p>
         <p style="font-size:14px; color:#e5e7eb; line-height:1.6;">
           [IntraSafe] Reminder: Your shift starts in 30 min (Zone A, 2:00 PM).
-          Reply STOP to opt out.
+          Reply STOP to opt out, HELP for help.
         </p>
       </div>
-      <div>
+      <div style="margin-bottom:14px; padding-bottom:14px; border-bottom:1px solid #1a1a2e;">
         <p style="font-size:12px; color:#6b7280; margin-bottom:6px;">TEAM COORDINATION</p>
         <p style="font-size:14px; color:#e5e7eb; line-height:1.6;">
           [IntraSafe] Admin has updated your assignment for tonight's event.
-          Check the app for details. Reply STOP to opt out.
+          Check the app for details. Reply STOP to opt out, HELP for help.
+        </p>
+      </div>
+      <div>
+        <p style="font-size:12px; color:#6b7280; margin-bottom:6px;">CRITICAL DELIVERY FALLBACK</p>
+        <p style="font-size:14px; color:#e5e7eb; line-height:1.6;">
+          [IntraSafe] Backup notification: A critical safety alert was issued for your
+          organization and push delivery may be unavailable. Open the app now for details.
+          Reply STOP to opt out, HELP for help.
         </p>
       </div>
     </div>
