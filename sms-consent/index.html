@@ -83,6 +83,7 @@
   <p class="subtitle">
     IntraSafe sends SMS messages to keep security teams coordinated during incidents.
     This page documents our opt-in consent process for A2P 10DLC compliance.
+    For details on how we handle your phone number and SMS data, see our <a href="https://intrasafe.app/privacy" style="color:#6366f1;">Privacy Policy</a>.
   </p>
 
   <!-- Consent capture point -->
@@ -105,13 +106,52 @@
         </p>
       </div>
       <p class="note">
-        The checkbox is unchecked by default and optional. Users can create an account
-        without opting into SMS. Only users who affirmatively check the box receive SMS
-        messages. Consent status and timestamp are stored per-user in our database for
-        compliance auditing.
+        The checkbox is unchecked by default. Users can create an account without checking
+        this box. Only users who affirmatively check the box will receive SMS messages.
+        Consent status and timestamp are stored per-user in our database for compliance auditing.
       </p>
     </div>
     <p class="screenshot-label">Consent checkbox — account creation form (Join with Token)</p>
+  </div>
+
+  <!-- How Users Opt In -->
+  <div class="section">
+    <h2>How users opt in</h2>
+    <div class="card">
+      <ol style="list-style: decimal; padding-left: 20px; font-size: 14px; line-height: 1.9; color: #e5e7eb;">
+        <li>An organization administrator invites a user via a unique invite link.</li>
+        <li style="margin-top:8px;">The user opens <a href="https://app.intrasafe.app" style="color:#6366f1;">https://app.intrasafe.app</a> and creates an account using the invite link.</li>
+        <li style="margin-top:8px;">During account creation, a dedicated SMS consent checkbox is displayed (unchecked by default, separate from Terms and Privacy acceptance).</li>
+        <li style="margin-top:8px;">If the user checks the box and submits the form, their consent and timestamp are recorded in the database.</li>
+        <li style="margin-top:8px;">Only users who checked the box receive SMS messages.</li>
+        <li style="margin-top:8px;">Users who did not check the box can enable SMS later from their Profile settings in the app.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Automated message responses -->
+  <div class="section">
+    <h2>Automated message responses</h2>
+    <div class="card">
+      <div style="margin-bottom:14px; padding-bottom:14px; border-bottom:1px solid #1a1a2e;">
+        <p style="font-size:12px; color:#6b7280; margin-bottom:6px;">OPT-IN CONFIRMATION</p>
+        <p style="font-size:14px; color:#e5e7eb; line-height:1.6;">
+          When a user opts in, they receive: "IntraSafe: You're opted in to receive security alerts, shift reminders, and team coordination messages. Reply HELP for help or email support@intrasafe.app. Message frequency may vary. Msg&amp;data rates may apply. Reply STOP to opt out."
+        </p>
+      </div>
+      <div style="margin-bottom:14px; padding-bottom:14px; border-bottom:1px solid #1a1a2e;">
+        <p style="font-size:12px; color:#6b7280; margin-bottom:6px;">HELP RESPONSE</p>
+        <p style="font-size:14px; color:#e5e7eb; line-height:1.6;">
+          When a user replies HELP, they receive: "IntraSafe: Security volunteer coordination platform. For support, email support@intrasafe.app or visit https://intrasafe.app. Reply HELP for help. Reply STOP to opt out."
+        </p>
+      </div>
+      <div>
+        <p style="font-size:12px; color:#6b7280; margin-bottom:6px;">OPT-OUT CONFIRMATION</p>
+        <p style="font-size:14px; color:#e5e7eb; line-height:1.6;">
+          When a user replies STOP, they receive: "IntraSafe: You are unsubscribed and will receive no further messages."
+        </p>
+      </div>
+    </div>
   </div>
 
   <!-- Program details -->
