@@ -12,16 +12,23 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #0a0a0a; --bg2: #111111; --border: #222222;
-      --red: #dc2626; --text: #ffffff; --text-muted: #a1a1aa; --text-dim: #71717a;
+      --bg: #0a0a0a; --bg2: #111111; --bg3: #161616; --border: #222222;
+      --red: #dc2626; --red-hover: #b91c1c; --red-dim: rgba(220,38,38,0.12);
+      --text: #ffffff; --text-muted: #a1a1aa; --text-dim: #71717a; --max: 1100px;
     }
     body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; }
     a { color: #f87171; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    nav { border-bottom: 1px solid var(--border); padding: 0 24px; }
-    .nav-inner { max-width: 800px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(10,10,10,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
+    .nav-inner { max-width: var(--max); margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
     .nav-logo { font-size: 1rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
-    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--red); }
+    .nav-logo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--red); animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.6; transform: scale(0.85); } }
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
+    .btn-ghost { font-size: 0.875rem; font-weight: 500; color: var(--text-muted); padding: 8px 16px; border-radius: 10px; transition: color 0.15s, background 0.15s; }
+    .btn-ghost:hover { color: var(--text); background: rgba(255,255,255,0.06); }
+    .btn-primary { font-size: 0.875rem; font-weight: 600; background: var(--red); color: #fff; padding: 8px 18px; border-radius: 10px; transition: background 0.15s, transform 0.1s; }
+    .btn-primary:hover { background: var(--red-hover); transform: translateY(-1px); }
     main { max-width: 720px; margin: 0 auto; padding: 64px 24px 96px; }
     h1 { font-size: 2rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 8px; }
     .meta { font-size: 0.85rem; color: var(--text-dim); margin-bottom: 48px; }
@@ -29,16 +36,27 @@
     p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 16px; }
     ul { margin: 0 0 16px 24px; }
     li { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 6px; }
-    footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; }
-    .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
-    .footer-links a { font-size: 0.85rem; color: var(--text-dim); }
-    .footer-copy { font-size: 0.8rem; color: var(--text-dim); margin-top: 12px; }
+    footer { border-top: 1px solid var(--border); padding: 48px 24px; }
+    .footer-inner { max-width: var(--max); margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
+    .footer-links a { font-size: 0.85rem; color: var(--text-dim); transition: color 0.15s; }
+    .footer-links a:hover { color: var(--text-muted); }
+    .footer-copy { font-size: 0.8rem; color: var(--text-dim); }
+    .footer-disclaimer { font-size: 0.75rem; color: #444; max-width: 560px; line-height: 1.6; }
   </style>
 </head>
 <body>
   <nav>
     <div class="nav-inner">
-      <a href="/" class="nav-logo"><span class="dot"></span> <strong>IntraSafe</strong></a>
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-dot"></span>
+        <strong>IntraSafe</strong>
+      </a>
+      <div class="nav-actions">
+        <a href="/about" class="btn-ghost">About</a>
+        <a href="https://app.intrasafe.app/login" class="btn-ghost">Sign In</a>
+        <a href="https://app.intrasafe.app/signup" class="btn-primary">Get Started Free</a>
+      </div>
     </div>
   </nav>
 
@@ -124,14 +142,17 @@
   </main>
 
   <footer>
-    <div class="footer-links">
-      <a href="/">Home</a>
-      <a href="/privacy">Privacy Policy</a>
-      <a href="/terms">Terms of Service</a>
-      <a href="/sms-consent">SMS Terms</a>
-      <a href="mailto:support@intrasafe.app">Contact</a>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <span class="footer-copy">© 2026 IntraSafe</span>
+        <a href="/about">About</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+        <a href="/sms-consent">SMS Terms</a>
+        <a href="mailto:support@intrasafe.app">Contact</a>
+      </div>
+      <p class="footer-disclaimer">IntraSafe is a coordination tool — a supplement to, not a replacement for, emergency services. Always call 911 in a life-threatening emergency.</p>
     </div>
-    <p class="footer-copy">© 2026 IntraSafe</p>
   </footer>
 </body>
 </html>
