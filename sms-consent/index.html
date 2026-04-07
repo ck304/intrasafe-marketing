@@ -47,6 +47,10 @@
     .consent-text { font-size: 14px; line-height: 1.7; color: #d1d5db; }
     .consent-text a { color: #6366f1; text-decoration: underline; }
     .note { font-size: 12px; color: #6b7280; margin-top: 14px; line-height: 1.6; }
+    .screenshot-img {
+      display: block; margin: 20px auto 0; max-width: 400px; width: 100%;
+      border-radius: 16px; border: 1px solid #1e1e3f;
+    }
     .screenshot-label {
       font-size: 11px; font-weight: 600; letter-spacing: 0.06em; color: #4b5563;
       text-transform: uppercase; text-align: center; margin-top: 10px;
@@ -120,6 +124,11 @@
         Consent status and timestamp are stored per-user in our database for compliance auditing.
       </p>
     </div>
+    <img
+      src="sms-consent-screenshot.png"
+      alt="IntraSafe account creation form showing SMS consent checkbox, unchecked by default"
+      class="screenshot-img"
+    />
     <p class="screenshot-label">Consent checkbox — account creation form (Join with Token)</p>
   </div>
 
