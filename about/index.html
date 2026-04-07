@@ -24,16 +24,16 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #0a0a0a;
-      --bg2: #111111;
-      --bg3: #161616;
-      --border: #222222;
-      --red: #dc2626;
-      --red-hover: #b91c1c;
-      --red-dim: rgba(220,38,38,0.12);
-      --text: #ffffff;
-      --text-muted: #a1a1aa;
-      --text-dim: #71717a;
+      --bg: #05050D;
+      --bg2: #0F0F1E;
+      --bg3: #141428;
+      --border: #1e1e3f;
+      --red: #6366f1;
+      --red-hover: #4f46e5;
+      --red-dim: rgba(99,102,241,0.12);
+      --text: #f4f4f8;
+      --text-muted: #9ca3af;
+      --text-dim: #6b7280;
       --radius: 10px;
       --max: 1100px;
     }
@@ -55,7 +55,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(10,10,10,0.85);
+      background: rgba(5,5,13,0.9);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
@@ -126,7 +126,7 @@
       transform: translateX(-50%);
       width: 600px;
       height: 600px;
-      background: radial-gradient(circle, rgba(220,38,38,0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 70%);
       pointer-events: none;
     }
     .eyebrow {
@@ -223,7 +223,7 @@
     .btn-hero-primary:hover {
       background: var(--red-hover);
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(220,38,38,0.3);
+      box-shadow: 0 8px 24px rgba(99,102,241,0.3);
     }
     .btn-hero-secondary {
       font-size: 1rem;
